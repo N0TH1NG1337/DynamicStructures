@@ -1,0 +1,15 @@
+/workspaces/DynamicStructures/bin/Debug/net7.0/DynamicStructures
+/workspaces/DynamicStructures/bin/Debug/net7.0/DynamicStructures.deps.json
+/workspaces/DynamicStructures/bin/Debug/net7.0/DynamicStructures.runtimeconfig.json
+/workspaces/DynamicStructures/bin/Debug/net7.0/DynamicStructures.dll
+/workspaces/DynamicStructures/bin/Debug/net7.0/DynamicStructures.pdb
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.csproj.AssemblyReference.cache
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.AssemblyInfoInputs.cache
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.AssemblyInfo.cs
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.csproj.CoreCompileInputs.cache
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.dll
+/workspaces/DynamicStructures/obj/Debug/net7.0/refint/DynamicStructures.dll
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.pdb
+/workspaces/DynamicStructures/obj/Debug/net7.0/DynamicStructures.genruntimeconfig.cache
+/workspaces/DynamicStructures/obj/Debug/net7.0/ref/DynamicStructures.dll
