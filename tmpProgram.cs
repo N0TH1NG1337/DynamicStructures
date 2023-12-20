@@ -322,21 +322,6 @@ class Program
         return NewL; // return the new one 
     }
 
-    public static bool IsExist(Node<int> L, int Number) {
-        Node<int> LastL = L;
-
-        while (LastL != null) {
-            int Current = LastL.GetValue();
-
-            if (Current == Number)
-                return true;
-
-            LastL = LastL.GetNext();
-        }
-
-        return false;
-    }
-
     public static Node<int> NewCopyExist(Node<int> L1, Node<int> L2) {
         Node<int> LastL1 = L1;
 
@@ -615,6 +600,95 @@ class Program
         return Sum;
     }
 
+    public static int CountNumberInList(Node<int> L, int x) {
+        Node<int> LastL = L;
+
+        int Count = 0;
+
+        while (LastL != null) {
+            int Current = LastL.GetValue();
+
+            if (x == Current)
+                Count++;
+
+            LastL = LastL.GetNext();
+        }
+
+        return Count;
+    }
+
+    public static Node<int> Insert(Node<int> L, int step, int x) {
+        if (step == 0) {
+            // Insert as first
+            return new Node<int>(x, L);
+        }
+
+        // Create a var that we will run with
+        Node<int> LastL = L;
+
+        // Create a var to count how much we passed
+        int Count = 0;
+
+        // Start to loop and check 1 before the end
+
+        // FIXME: we can stop already when Count+ 1 == step since we must already passed it
+        // and prob changed
+        while (LastL.GetNext() != null) {
+            // Add another one, since we checked
+            Count++;
+
+            // Check how much we passed based on where we need to add
+            if (Count == step) {
+                // We set the Last Node we passed a new Next address
+                // new Node<int>(x, ...);
+                // the LastL.GetNext() will connect our next Node to the new one
+                // Therefore we dont lose anything
+                LastL.SetNext(new Node<int>(x, LastL.GetNext()));
+            }
+
+            // Move the next one.
+            LastL = LastL.GetNext();
+        }
+
+        // However if we still didnt add and we passed everything
+        // We add to the end
+        if (step > Count) {
+            LastL.SetNext(new Node<int>(x));
+        }
+
+        // return the "new" List
+        return L;
+    }
+
+    public static bool IsExist(Node<int> L, int Number) {
+        Node<int> LastL = L;
+
+        while (LastL != null) {
+            int Current = LastL.GetValue();
+
+            if (Current == Number)
+                return true;
+
+            LastL = LastL.GetNext();
+        }
+
+        return false;
+    }
+
+    public static bool IsAllExist(Node<int> List1, Node<int> List2) {
+        Node<int> LastList2 = List2;
+
+        while (LastList2 != null) {
+            int Current = LastList2.GetValue();
+
+            if (!IsExist(List1, Current))
+                return false;
+
+            LastList2 = LastList2.GetNext();
+        }
+
+        return true;
+    }
 
 
     static void Main(string[] args)
@@ -627,9 +701,11 @@ class Program
         //Node<int> t = CreateIntList();//ToFirst(5);
         //PrintList<int>(t); // בדיקת תקינות
 
-        Node<int> t = BuildRandom(5, 1, 20);
+        Node<int> t = CreateIntList();
+        Node<int> t2 = CreateIntList();
         PrintList<int>(t);
-        Console.WriteLine(MaxInList(t));
+        PrintList<int>(t2);
+        Console.WriteLine(IsAllExist(t, t2));
 
         //PrintList<int>(t, 1, 3);
         //PrintList<int>(NewCopyNotExist(t, t2));
