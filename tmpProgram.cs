@@ -508,21 +508,6 @@ class Program
         return L;
     }
 
-    public static int SumList2(Node<int> L) {
-        Node<int> LastL = L;
-        int Sum = 0;
-
-        while (LastL != null) {
-            int Current = LastL.GetValue();
-
-            Sum += Current;
-
-            LastL = LastL.GetNext();
-        }
-
-        return Sum;
-    }
-
     public static double AvarageList(Node<int> L) {
         Node<int> PosL = L;
 
